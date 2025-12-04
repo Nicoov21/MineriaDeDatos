@@ -74,6 +74,7 @@ def index():
     return render_template("upload.html")
 
 
+#Esto es: T3.2 – Implementar ruta /upload para subir CSV
 @app.route("/upload", methods=["POST"])
 def upload():
     """Procesa el CSV subido, genera predicciones y muestra resultados."""
