@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Resultados</h2>
+
+  <div class="mb-3">
+    <form action="{{ url_for('download') }}" method="post">
+      <input type="hidden" name="csv_data" value="{{ csv_data | e }}">
+      <button type="submit" class="btn btn_success btn btn-success">Descargar CSV con resultados</button>
+    </form>
+  </div>
+
+  <div class="table-responsive">
+    {{ table_html | safe }}
+  </div>
+
+  <div class="mt-3">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Procesar otro archivo</a>
+  </div>
+{% endblock %}
